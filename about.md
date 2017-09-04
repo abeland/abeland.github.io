@@ -6,7 +6,7 @@ permalink: /about/
 
 # Hello. I'm Abe Land.
 
-![me]({{ site.url }}/assets/me2.jpg =300x300)
+![me]({{ site.url }}/assets/me2.jpg) <!-- .element height="300px" width="300px" -->
 
 ## What I do
 
