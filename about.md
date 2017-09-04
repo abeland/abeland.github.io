@@ -6,6 +6,8 @@ permalink: /about/
 
 # Hello. I'm Abe Land.
 
+![me]({{ site.url }}/assets/me2.jpg)
+
 ## What I do
 
 ### Coding
