@@ -4,7 +4,7 @@ I like to keep things simple so here are a few things I do to move fast as I sta
 
 ## 1. Set up autoloading of `lib/`
 
-You throw a bunch of junk into `lib/` only find Rails complaining about `uninitialized constant`(s) and such.
+You throw a bunch of junk into `lib/` only to find Rails complaining about `uninitialized constant`(s) and such.
 I just tell Rails to autoload everything in `lib/`:
 
 ```
