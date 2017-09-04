@@ -26,7 +26,7 @@ end
 
 You will get a `NameError` because there is an `uninitialized constant`.
 And it's true, there's nothing that `require`d your `Sorting` module.
-So I like to change my .rspec to be:
+So I like to change my `.rspec` to be:
 
 ```
 # .rspec
@@ -34,7 +34,7 @@ So I like to change my .rspec to be:
 --require rails_helper
 ```
 
-(`spec/rails_helper.rb` should be have been created for you when you followed the instructions for the rspec-rails gem).
+(`spec/rails_helper.rb` should be have been created for you when you followed the instructions for the [rspec-rails gem](https://github.com/rspec/rspec-rails)).
 
 `rails_helper.rb` itself requires `spec_helper.rb` so you can remove the `--require spec_helper` line from your `.rspec` file.
 Yes, requiring `rails_helper` in your `.rspec` file will make running tests slower because of the longer set up time, but
