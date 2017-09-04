@@ -1,0 +1,8 @@
+---
+layout: post
+title: "I'm starting a blog."
+date: 2017-09-03 21:25:10 -0700
+categories: meta
+---
+
+I give it a week.
