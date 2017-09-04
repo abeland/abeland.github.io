@@ -24,6 +24,8 @@ Then I joined Facebook full-time and I built a ton of stuff, most of which I can
 
 I really like climbing. I mostly climb indoors but [sometimes I go out and get humbled on real rock](https://www.mountainproject.com/u/abe-land//112504014?action=ticks&). I mostly enjoy sport climbing but most of my friends boulder so I do that too even though I find it super boring.
 
+![me climbing at Smith Rock]({{ site.url }}/assets/smith_rock_climbing.jpg)
+
 ### Coffee
 
 Coffee is great. Aside from helping you wake up and get focused, it [helps you poop](https://www.washingtonpost.com/news/speaking-of-science/wp/2015/08/10/why-does-coffee-make-you-poop/), [might prevent Alzheimer's/dementia](https://www.ncbi.nlm.nih.gov/pubmed/20182054), and has [a bunch of other benefits](http://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/coffee-and-health/faq-20058339). Also it tastes amazing. A good cup of coffee needs no cream or sugar.
