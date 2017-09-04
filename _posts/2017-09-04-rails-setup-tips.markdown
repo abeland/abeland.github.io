@@ -7,7 +7,7 @@ I like to keep things simple so here are a few things I do to move fast as I sta
 You throw a bunch of junk into `lib/` only to find Rails complaining about `uninitialized constant`(s) and such.
 I just tell Rails to autoload everything in `lib/`:
 
-```
+```ruby
 # config/application.rb
 config.autoload_paths += Dir["#{config.root}/lib/**/"]
 config.enable_dependency_loading = true
