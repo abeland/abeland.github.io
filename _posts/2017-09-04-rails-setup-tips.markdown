@@ -40,7 +40,7 @@ So I like to change my `.rspec` to be:
 Yes, requiring `rails_helper` in your `.rspec` file will make running tests slower because of the longer set up time, but
 the convenience factor of not having to explicitly `require` every module in `lib/` that I need is well worth it.
 
-## 3. Alias everything
+## 3. Alias (basically) everything
 
 If you are constantly typing stuff like `bundle exec rails console` instead of something much shorter like `rc` then you are wasting your life.
 By my unscientific measurement, it takes me about 3-4 seconds to type the former and only 1 the latter. Let's be generous and
