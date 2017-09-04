@@ -18,7 +18,7 @@ config.enable_dependency_loading = true
 This one took me a while to realize, but when you first set up RSpec, you have to require everything you want to test.
 For example, if you have a module called `Sorting`, and you go to write a test:
 
-```
+```ruby
 RSpec.describe Sorting do
   ...
 end
