@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Rails Setup Tips"
+date: 2017-09-04 21:25:10 -0700
+categories: ruby rails code
+---
+
 Rails is pretty neat for getting stuff up and running quickly and will scale decently later on for most uses.
 However, there are a bunch of things I tend to forget regarding how to set up autoloading, rspec, etc.
 I like to keep things simple so here are a few things I do to move fast as I start new projects:
