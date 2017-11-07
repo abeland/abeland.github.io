@@ -64,7 +64,7 @@ frankly don't have the patience to learn how to do everything in express or some
 thought about ORMs!).
 
 I'm also using the [graphql gem](https://github.com/rmosolgo/graphql-ruby), which is a very nice GraphQL server implementation
-for Ruby. It has worked very well so far us for all of our queries and other non-file-uploading mutations along with Apollo
+for Ruby. It has worked very well so far for us for all of our queries and other non-file-uploading mutations along with Apollo
 so we'd like to keep using it. Thus, I decided to
 [create a Rails middleware gem](https://github.com/abeland/apollo_fetch_upload_rails_middleware) which populates the
 GraphQL mutation input variables upon file uploading similar to how `apollo-upload-server` does it. It does __not__ handle
@@ -72,4 +72,4 @@ batching yet, but I may add that later when/if I need it.
 
 I have tested it on single uploads of files and we use it to create AR models which have Paperclip attachments storing the
 file contents in S3. So far, so good. If you are here because you're looking to handle file upload GraphQL mutations in Rails,
-I hope you'll try my gem out and file an issues you might find or even submit a PR to improve it. Or, just enjoy the middleware!
+I hope you'll try my gem out and file any issues you might find or even submit a PR to improve it. Or, just enjoy the middleware!
