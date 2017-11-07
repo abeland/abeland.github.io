@@ -5,7 +5,7 @@ date: 2017-11-05 18:25:10 -0700
 categories: ruby rails code
 ---
 
-# rails_apollo_fetch_upload_middleware
+# [rails_apollo_fetch_upload_middleware](https://github.com/abeland/apollo_fetch_upload_rails_middleware)
 
 ## The Problem
 
