@@ -6,7 +6,7 @@ permalink: /about/
 
 # Hello. I'm Abe Land.
 
-![]({{ site.url }}/assets/me2.jpg)
+![]({{ site.url }}/img/me2.jpg)
 
 ## What I do
 
@@ -24,7 +24,7 @@ Then I joined Facebook full-time and I built a ton of stuff, most of which I can
 
 I really like climbing. I mostly climb indoors but [sometimes I go out and get humbled on real rock](https://www.mountainproject.com/u/abe-land//112504014?action=ticks&). I mostly enjoy sport climbing but most of my friends boulder so I do that too even though I find it super boring.
 
-![me climbing at Smith Rock]({{ site.url }}/assets/smith_rock_climbing.jpg)
+![me climbing at Smith Rock]({{ site.url }}/img/smith_rock_climbing.jpg)
 
 ### Coffee
 

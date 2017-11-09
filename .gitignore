@@ -1,7 +1,10 @@
 _site
+node_modules
+Gemfile.lock
 .sass-cache
 .jekyll-metadata
-
 .DS_STORE
-
+vendor/
+.bundle/
+*.gem
 *~
