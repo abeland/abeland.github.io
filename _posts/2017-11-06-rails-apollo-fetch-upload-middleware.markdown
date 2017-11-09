@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "File uploads via GraphQL mutations with a Rails server"
+title: "Ruby+Rails+Redux+React+GraphQL+Apollo+File uploading"
+subtitle: "Using Apollo to upload files to a Rails server"
 date: 2017-11-05 18:25:10 -0700
 categories: ruby rails code
 ---
@@ -17,7 +18,7 @@ found out that no one (as far as I can tell) has done this.
 
 ## The Solution
 
-The closest I could find was a very neat npm package called 
+The closest I could find was a very neat npm package called
 [apollo-fetch-upload](https://github.com/apollographql/apollo-fetch/tree/master/packages/apollo-fetch-upload). The package
 author made it so that files which are uploaded client-side can be sent using the Apollo client (once you setup the
 `apollo-fetch-upload` stuff when you create your `ApolloClient` instance). On the client, you can simply set the native File
@@ -52,7 +53,7 @@ type: String!
 ```
 
 However, to use this package on the client, it assumes you are (1) using NodeJS on the server/backend and (2) will then use
-the accompanying [apollo-upload-server](https://github.com/jaydenseric/apollo-upload-server) middleware. This middleware 
+the accompanying [apollo-upload-server](https://github.com/jaydenseric/apollo-upload-server) middleware. This middleware
 basically changes the incoming request to populate the `file` input variables (of type `Upload`) on the mutation with the
 `name` which comes from the form and the `path`, `size`, and `type` which come from the temp files on the server which are
 created as a result of the form post.
