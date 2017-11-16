@@ -3,7 +3,6 @@ layout: post
 title: "File uploads via GraphQL mutations with a Rails server"
 date: 2017-11-05 18:25:10 -0700
 categories: ruby rails code
-comments: true
 ---
 
 # [rails_apollo_fetch_upload_middleware](https://github.com/abeland/apollo_fetch_upload_rails_middleware)
