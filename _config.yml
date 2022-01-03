@@ -34,7 +34,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I've made web apps, backend services, and mobile apps.
 
-  I love moving bits around!!
+  I love moving bits around!
 
   I've also lead dozens of teams technically in all stages from proof of concept, primary architecture, expansion plans, mentoring new tech leads, etc. I really enjoy leading teams from just an idea to a fully launched product/project while helping engineers grow their careers and skills along the way.
 
@@ -161,29 +161,25 @@ content:
 
           + Tau Beta Pi Engineering Honor Society, Gamma Chapter
 
-  - title: A Little More About Me
+  - title: Misc.
     layout: text
     content: | # this will include new lines to allow paragraphs
 
       I love computer science and software engineering, both theory and practice. I love building software in general. When I'm not building software, I also like:
 
-      #### Climbing
+      ## Climbing
 
       I mostly climb indoors but sometimes [I go out and get humbled on real rock](https://www.mountainproject.com/user/112504014/abe-land?action=ticks&){:target="_blank"}. I mostly enjoy sport climbing but my friends drag me bouldering sometimes.
 
-      #### Coffee
+      ## Coffee
 
       Coffee is great. Aside from helping you wake up and get focused, [it helps you poop](https://www.washingtonpost.com/news/speaking-of-science/wp/2015/08/10/why-does-coffee-make-you-poop/){:target="_blank"}, [might prevent Alzheimer’s/dementia](https://pubmed.ncbi.nlm.nih.gov/20182054/){:target="_blank"}, and [has a bunch of other benefits](https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/coffee-and-health/faq-20058339){:target="_blank"}. Also it tastes amazing. I love roasting, brewing, tasting, and reading about coffee.
 
-      #### Being a dad
+      ## Being a dad
       My wife and I are blessed with two wonderful children who bring us equal parts confusion and frustration but also much much more joy.
 
-      #### DYI home improvement
+      ## DYI home improvement
       I have no idea what I'm doing here but it's tons of fun.
-
-# Footer
-footer_show_references: false
-# references_title: References on request (Override references text)
 
 # Build settings
 remote_theme: sproogen/resume-theme
