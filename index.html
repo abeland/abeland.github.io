@@ -1,11 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Abe Land</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Survey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .big-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .big-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+        }
+
+        .big-button.secondary {
+            background: linear-gradient(45deg, #4834d4, #686de0);
+        }
+
+        .big-button.secondary:hover {
+            background: linear-gradient(45deg, #686de0, #4834d4);
+            box-shadow: 0 10px 25px rgba(72, 52, 212, 0.4);
+        }
+
+        .age-button {
+            background: linear-gradient(45deg, #00d2d3, #54a0ff);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            margin: 10px;
+            font-weight: 500;
+        }
+
+        .age-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 210, 211, 0.4);
+            background: linear-gradient(45deg, #54a0ff, #00d2d3);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4834d4);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .back-button {
+            background: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #f8f8f8;
+            border-color: #ccc;
+        }
+
+        .final-page {
+            text-align: left;
+        }
+
+        .result-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4834d4;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .result-value {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
-  <label for="userInput">Enter how you know Abe:</label>
-  <input type="text" id="abeinput" name="abeinput" placeholder="abe and i first met…" />
+    <div class="container">
+        <div id="page1" class="page">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 33%"></div>
+            </div>
+            <h1>Welcome!</h1>
+            <h2>Please select your gender</h2>
+            <div class="button-group">
+                <button class="big-button" onclick="goToPage2('male')">Male</button>
+                <button class="big-button secondary" onclick="goToPage2('female')">Female</button>
+            </div>
+        </div>
+
+        <div id="page2" class="page" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 66%"></div>
+            </div>
+            <h2>What's your age range?</h2>
+            <div class="button-group">
+                <button class="age-button" onclick="goToPage3('18-25')">18-25</button>
+                <button class="age-button" onclick="goToPage3('26-35')">26-35</button>
+                <button class="age-button" onclick="goToPage3('36-45')">36-45</button>
+                <button class="age-button" onclick="goToPage3('46-55')">46-55</button>
+                <button class="age-button" onclick="goToPage3('56-65')">56-65</button>
+                <button class="age-button" onclick="goToPage3('65+')">65+</button>
+            </div>
+            <button class="back-button" onclick="goToPage1()">← Back</button>
+        </div>
+
+        <div id="page3" class="page" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <h2>Thank you!</h2>
+            <div class="final-page">
+                <h3 style="margin-bottom: 20px; color: #333;">Here's what we collected:</h3>
+                <div class="result-item">
+                    <div class="result-label">Gender</div>
+                    <div class="result-value" id="final-gender"></div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Age Range</div>
+                    <div class="result-value" id="final-age"></div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">URL Parameters</div>
+                    <div class="result-value" id="url-params" style="font-family: monospace; word-break: break-all;"></div>
+                </div>
+            </div>
+            <button class="back-button" onclick="restart()">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        // Store the current state
+        let currentState = {
+            gender: null,
+            age_bucket: null
+        };
+
+        function updateURL() {
+            const params = new URLSearchParams();
+            if (currentState.gender) params.set('gender', currentState.gender);
+            if (currentState.age_bucket) params.set('age_bucket', currentState.age_bucket);
+            
+            const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+            window.history.pushState(currentState, '', newUrl);
+        }
+
+        function goToPage2(gender) {
+            currentState.gender = gender;
+            updateURL();
+            
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+
+        function goToPage3(ageBucket) {
+            currentState.age_bucket = ageBucket;
+            updateURL();
+            
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'block';
+            
+            // Update final page with collected data
+            document.getElementById('final-gender').textContent = currentState.gender;
+            document.getElementById('final-age').textContent = currentState.age_bucket;
+            document.getElementById('url-params').textContent = window.location.search || 'No parameters';
+        }
+
+        function goToPage1() {
+            currentState.gender = null;
+            updateURL();
+            
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page1').style.display = 'block';
+        }
+
+        function restart() {
+            currentState = { gender: null, age_bucket: null };
+            updateURL();
+            
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page1').style.display = 'block';
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(event) {
+            if (event.state) {
+                currentState = event.state;
+                // Determine which page to show based on state
+                if (currentState.age_bucket) {
+                    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+                    document.getElementById('page3').style.display = 'block';
+                    document.getElementById('final-gender').textContent = currentState.gender;
+                    document.getElementById('final-age').textContent = currentState.age_bucket;
+                    document.getElementById('url-params').textContent = window.location.search || 'No parameters';
+                } else if (currentState.gender) {
+                    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+                    document.getElementById('page2').style.display = 'block';
+                } else {
+                    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+                    document.getElementById('page1').style.display = 'block';
+                }
+            }
+        });
+
+        // Initialize from URL parameters if present
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gender = urlParams.get('gender');
+            const ageBucket = urlParams.get('age_bucket');
+            
+            if (gender && ageBucket) {
+                currentState = { gender: gender, age_bucket: ageBucket };
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page3').style.display = 'block';
+                document.getElementById('final-gender').textContent = gender;
+                document.getElementById('final-age').textContent = ageBucket;
+                document.getElementById('url-params').textContent = window.location.search;
+            } else if (gender) {
+                currentState = { gender: gender, age_bucket: null };
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
